@@ -269,7 +269,9 @@ export const EXCLUSION_PATTERNS = [
   'cant',
   'cannot',
   'can not',
-  'unable to'
+  'unable to',
+  'will do elsewhere',
+  'will schedule elsewhere'
 ];
 
 export function checkNotesForExclusion(notes: string, medicalItem: MedicalItem): boolean {
@@ -295,6 +297,42 @@ export function checkNotesForExclusion(notes: string, medicalItem: MedicalItem):
       const normalizedPattern = normalizeText(pattern);
       if (normalizedLine.includes(normalizedPattern)) {
         return true; // Found exclusion pattern on the same line as the item
+      }
+    }
+  }
+  
+  return false;
+}
+
+// Check if notes mention patient wants to do procedure at open/outside facility
+export function checkNotesForOpenFacility(notes: string, medicalItem: MedicalItem): boolean {
+  const normalizedNotes = normalizeText(notes);
+  
+  // Check if any variation of the item is mentioned with "open"
+  for (const variation of medicalItem.variations) {
+    const normalizedVariation = normalizeText(variation);
+    
+    // Extract key terms (e.g., "mri" from "mri brain without contrast")
+    const keyTerms = normalizedVariation.split(' ').filter(term => 
+      term.length > 2 && !['with', 'without', 'contrast', 'the', 'and', 'for'].includes(term)
+    );
+    
+    for (const term of keyTerms) {
+      // Look for patterns like "will do MRIs open", "wants open MRI"
+      const openPatterns = [
+        `will do ${term}s open`,
+        `will do ${term} open`,
+        `wants open ${term}`,
+        `doing open ${term}`,
+        `prefers open ${term}`,
+        `${term}s open`,  // "MRIs open"
+        `open ${term}`,
+      ];
+      
+      for (const pattern of openPatterns) {
+        if (normalizedNotes.includes(pattern)) {
+          return true;
+        }
       }
     }
   }
@@ -399,12 +437,15 @@ export function analyzeMissingProcedures(
     // Check if notes exclude this item
     const excludedByNotes = checkNotesForExclusion(notesInput, order.medicalItem);
     
+    // Check if notes mention open facility for this procedure
+    const excludedByOpenFacility = checkNotesForOpenFacility(notesInput, order.medicalItem);
+    
     // Check if this is a sleep test and sleep was generally refused
     const isSleepTest = order.medicalItem.canonical === "Sleep Apnea Home Test" || 
                         order.medicalItem.canonical === "Sleep Insomnia Home Test";
     const excludedBySleepRefusal = isSleepTest && sleepRefusedInNotes;
     
-    if (excludedByNotes || excludedBySleepRefusal) {
+    if (excludedByNotes || excludedByOpenFacility || excludedBySleepRefusal) {
       continue; // Excluded by notes
     }
     

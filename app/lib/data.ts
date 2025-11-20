@@ -58,7 +58,14 @@ export const PROCEDURES: MedicalItem[] = [
   },
   {
     canonical: "Physical Therapy",
-    variations: ["physical therapy", "p/t evaluation", "pt evaluation", "p/t", "pt"],
+    variations: [
+      "physical therapy",
+      "p/t evaluation",
+      "pt evaluation",
+      "p/t",
+      "physical therapist referral",
+      "pt referral"
+    ],
     category: "therapy"
   },
   
