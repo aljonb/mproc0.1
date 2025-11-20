@@ -53,10 +53,10 @@ export const PROCEDURES: MedicalItem[] = [
   // Allergy & PT
   {
     canonical: "allergy testing",
-    variations: ["allergy testing", "allergy skin prick test", "allergy test"],
+    variations: ["allergy testing", "allergy skin prick test", "allergy test", "Allergy_Testing", "Allergy NEW, 20 min", "Allergy Testing"],
     category: "test"
-  },
-  {
+  },  
+  { 
     canonical: "physical therapy",
     variations: [
       "physical therapy",
@@ -114,7 +114,7 @@ export const PROCEDURES: MedicalItem[] = [
   },
   {
     canonical: "US renal artery",
-    variations: ["US, duplex, renal artery", "ultrasound renal"],
+    variations: ["US, duplex, renal artery", "ultrasound renal", "US Renal Doppler"],
     category: "ultrasound"
   },
   {
