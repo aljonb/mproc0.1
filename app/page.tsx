@@ -25,7 +25,12 @@ export default function Home() {
   };
 
   const copyResults = () => {
-    const text = results.map(r => r.item).join(', ');
+    const date = new Date().toLocaleDateString('en-US', { 
+      month: '2-digit', 
+      day: '2-digit', 
+      year: '2-digit' 
+    });
+    const text = `Missing procedures, ${results.map(r => r.item).join(', ')}, ${date} AB`;
     navigator.clipboard.writeText(text);
   };
 
@@ -146,13 +151,14 @@ export default function Home() {
                 </div>
 
                 {/* Summary List */}
-                <div className="mb-6 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                    Missing Procedures:
-                  </h3>
-                  <p className="text-gray-800 dark:text-gray-200">
-                    {results.map(r => r.item).join(', ')}
-                  </p>
+                <div className="mb-6">
+                  <input
+                    type="text"
+                    readOnly
+                    value={`Missing procedures, ${results.map(r => r.item).join(', ')}, ${new Date().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' })} AB`}
+                    className="w-full p-4 bg-gray-50 dark:bg-gray-700 rounded-lg text-gray-800 dark:text-gray-200 font-mono text-sm border-0 focus:ring-2 focus:ring-blue-500 cursor-text select-all"
+                    onClick={(e) => e.currentTarget.select()}
+                  />
                 </div>
 
                 {/* Detailed List */}
