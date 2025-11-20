@@ -18,7 +18,7 @@ export const PROVIDERS: MedicalItem[] = [
     category: "provider"
   },
   {
-    canonical: "gastroenterologist",
+    canonical: "gastro",
     variations: ["gastro", "gastroenterologist", "gastroenterology", "gi"],
     category: "provider"
   },
@@ -52,12 +52,12 @@ export const PROVIDERS: MedicalItem[] = [
 export const PROCEDURES: MedicalItem[] = [
   // Allergy & PT
   {
-    canonical: "allergy aesting",
+    canonical: "allergy testing",
     variations: ["allergy testing", "allergy skin prick test", "allergy test"],
     category: "test"
   },
   {
-    canonical: "Physical Therapy",
+    canonical: "physical therapy",
     variations: [
       "physical therapy",
       "p/t evaluation",
@@ -76,7 +76,7 @@ export const PROCEDURES: MedicalItem[] = [
     category: "ultrasound"
   },
   {
-    canonical: "US Abdominal Aorta",
+    canonical: "US abdominal aorta",
     variations: ["us abdominal aorta", "ultrasound abdominal aorta"],
     category: "ultrasound"
   },
@@ -86,7 +86,7 @@ export const PROCEDURES: MedicalItem[] = [
     category: "ultrasound"
   },
   {
-    canonical: "US Carotid Doppler",
+    canonical: "US carotid",
     variations: ["us carotid doppler", "us carotid", "ultrasound carotid"],
     category: "ultrasound"
   },
@@ -96,49 +96,49 @@ export const PROCEDURES: MedicalItem[] = [
     category: "ultrasound"
   },
   {
-    canonical: "US Pelvic",
+    canonical: "US pelvic",
     variations: ["us pelvic", "ultrasound pelvic"],
     category: "ultrasound"
   },
   {
-    canonical: "US Renal",
+    canonical: "US renal",
     variations: ["us renal", "ultrasound renal"],
     category: "ultrasound"
   },
   {
-    canonical: "US Renal Doppler",
+    canonical: "US renal doppler",
     variations: ["us renal doppler", "ultrasound renal doppler"],
     category: "ultrasound"
   },
   {
-    canonical: "US Soft Tissue Head & Neck",
+    canonical: "US soft tissue head & neck",
     variations: ["us soft tissue of head & neck", "us soft tissue head neck"],
     category: "ultrasound"
   },
   {
-    canonical: "US Transcranial Doppler",
+    canonical: "US transcranial doppler",
     variations: ["us transcranial doppler", "ultrasound transcranial"],
     category: "ultrasound"
   },
   {
-    canonical: "US Venous Doppler",
+    canonical: "US venous doppler",
     variations: ["us venous doppler", "ultrasound venous doppler"],
     category: "ultrasound"
   },
   {
-    canonical: "US Soft Tissue Extremities",
+    canonical: "US soft tissue extremities",
     variations: ["us soft tissue extremities", "ultrasound soft tissue extremities"],
     category: "ultrasound"
   },
   
   // Sleep Tests
   {
-    canonical: "Sleep Apnea",
+    canonical: "sleep apnea home test",
     variations: ["sleep apnea home test", "sleep apnea test", "home sleep study", "home sleep testing"],
     category: "test"
   },
   {
-    canonical: "Sleep Insomnia Home Test",
+    canonical: "sleep insomnia home test",
     variations: ["sleep insomnia home test", "insomnia test", "insomnia device", "electroencephalogram eeg all night recording", "eeg all night recording"],
     category: "test"
   },
