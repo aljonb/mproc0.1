@@ -9,7 +9,7 @@ export interface MedicalItem {
 export const PROVIDERS: MedicalItem[] = [
   {
     canonical: "allergist",
-    variations: ["allergist", "Allergy FU"],
+    variations: ["allergist", "Allergy FU", "Allergist_Babazadeh", " Allergy NEW, 20 min"],
     category: "provider"
   },
   {
