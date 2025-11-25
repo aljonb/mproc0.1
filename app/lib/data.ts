@@ -340,7 +340,7 @@ export const PROCEDURES: MedicalItem[] = [
   },
   {
     canonical: "MRI Brain W/WO Contrast",
-    variations: ["mri brain w/wo contrast", "mri brain w/w/o contrast"],
+    variations: ["mri brain w/wo contrast", "mri brain w/w/o contrast", "MRI, brain + brain stem, w/o contrast"],
     category: "mri"
   },
   {
@@ -369,7 +369,7 @@ export const PROCEDURES: MedicalItem[] = [
     category: "mri"
   },
   {
-    canonical: "MRI C Spine W/O",
+    canonical: "MRI C Spine w/o contrast",
     variations: ["mri c spine w/o", "mri c spine w/o contrast", "mri cervical spine w/o"],
     category: "mri"
   },
@@ -535,7 +535,7 @@ export const PROCEDURES: MedicalItem[] = [
       "emg lower extremity",
       "nerve conduction study emg lower",
       "nerve conduction emg lower",
-      "ncs emg lower"
+      "lower extremity electromyogram (PROC) (submitted, STAT)"
     ],
     category: "test"
   },
