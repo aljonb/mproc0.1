@@ -72,6 +72,12 @@ export const PROCEDURES: MedicalItem[] = [
   // Ultrasounds
 
   {
+    canonical: "US echo",
+    variations: ["US, echo", "US echo", "US, echocardiogram", "US echocardiogram"],
+    category: "ultrasound"
+  },
+
+  {
     canonical: "US thyroid",
     variations: ["US, thyroid", "US Soft Tissue of Head & Neck"],
     category: "ultrasound"
@@ -89,7 +95,7 @@ export const PROCEDURES: MedicalItem[] = [
   },
   {
     canonical: "US abdominal aorta",
-    variations: ["us abdominal aorta", "ultrasound abdominal aorta"],
+    variations: ["us abdominal aorta", "ultrasound abdominal aorta", "US, abdominal aorta"],
     category: "ultrasound"
   },
   {
@@ -99,17 +105,17 @@ export const PROCEDURES: MedicalItem[] = [
   },
   {
     canonical: "US carotid",
-    variations: ["us carotid doppler", "us carotid", "ultrasound carotid"],
+    variations: ["us carotid doppler", "us carotid", "ultrasound carotid", "US, carotid"],
     category: "ultrasound"
   },
   {
     canonical: "US Groin/Scrotum",
-    variations: ["us groin / scrotum", "us groin", "us scrotum", "ultrasound groin"],
+    variations: ["us groin / scrotum", "us groin", "us scrotum", "ultrasound groin", "US, groin / scrotum"],
     category: "ultrasound"
   },
   {
     canonical: "US pelvic",
-    variations: ["us pelvic", "ultrasound pelvic"],
+    variations: ["us pelvic", "ultrasound pelvic", "US, pelvic"],
     category: "ultrasound"
   },
   {
@@ -129,12 +135,12 @@ export const PROCEDURES: MedicalItem[] = [
   },
   {
     canonical: "US transcranial doppler",
-    variations: ["us transcranial doppler", "ultrasound transcranial"],
+    variations: ["us transcranial doppler", "ultrasound transcranial", "US, transcranial"],
     category: "ultrasound"
   },
   {
     canonical: "US venous doppler",
-    variations: ["us venous doppler", "ultrasound venous doppler"],
+    variations: ["us venous doppler", "ultrasound venous doppler", "US, venous"],
     category: "ultrasound"
   },
   {
@@ -524,7 +530,8 @@ export const PROCEDURES: MedicalItem[] = [
       "emg upper extremity",
       "nerve conduction study emg upper",
       "nerve conduction emg upper",
-      "ncs emg upper"
+      "ncs emg upper",
+      "upper extremity electromyogram"
     ],
     category: "test"
   },
