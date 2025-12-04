@@ -105,7 +105,7 @@ export const PROCEDURES: MedicalItem[] = [
   },
   {
     canonical: "US carotid",
-    variations: ["us carotid doppler", "us carotid", "ultrasound carotid", "US, carotid"],
+    variations: ["us carotid doppler", "us carotid", "ultrasound carotid", "US, carotid", "US, duplex, carotid artery (perform)"],
     category: "ultrasound"
   },
   {
