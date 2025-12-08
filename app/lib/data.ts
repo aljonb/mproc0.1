@@ -520,7 +520,7 @@ export const PROCEDURES: MedicalItem[] = [
     category: "test"
   },
   {
-    canonical: "EMG Upper",
+    canonical: "EMG upper",
     variations: [
       "emg upper",
       "emg upper extremity",
