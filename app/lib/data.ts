@@ -90,7 +90,7 @@ export const PROCEDURES: MedicalItem[] = [
   },
   {
     canonical: "US abdomen",
-    variations: ["US, abdomen, complete", "ultrasound abdominal", "US ABDOMINAL"],
+    variations: ["US, abdomen, complete", "ultrasound abdominal", "US ABDOMINAL", "US, abdomen (submit)"],
     category: "ultrasound"
   },
   {
