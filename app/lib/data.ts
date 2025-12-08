@@ -147,7 +147,7 @@ export const PROCEDURES: MedicalItem[] = [
   
   // Sleep Tests
   {
-    canonical: "sleep apnea home test",
+    canonical: "sleep apnea device",
     variations: ["sleep apnea home test", "sleep apnea test", "home sleep study", "home sleep testing"],
     category: "test"
   },
