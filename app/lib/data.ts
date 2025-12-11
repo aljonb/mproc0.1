@@ -31,11 +31,11 @@ export const PROVIDERS: MedicalItem[] = [
     canonical: "ortho",
     variations: ["ortho", "orthopedist", "orthopedic", "orthopedics"],
     category: "provider"
-  },
+  },  
   {
-    canonical: "pulmo",
-    variations: ["pulmo", "pulmonology", "pulmonologist", "sleep medicine referral", "sleep medicine"],
-    category: "provider"
+    canonical: "pulmo",     
+    variations: ["pulmo", "pulmonology", "pulmonologist", "sleep medicine referral", "sleep medicine", "	Pulmo_Rumi"],
+    category: "provider"  
   },
   {
     canonical: "pain management",
