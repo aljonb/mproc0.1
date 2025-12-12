@@ -135,7 +135,7 @@ export const PROCEDURES: MedicalItem[] = [
     category: "ultrasound"
   },
   {
-    canonical: "US venous doppler",
+    canonical: "US venous",
     variations: ["us venous doppler", "ultrasound venous doppler", "US, venous", "US, duplex, venous, lower extremity (perform)"],
     category: "ultrasound"
   },
