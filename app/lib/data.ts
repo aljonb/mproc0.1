@@ -345,27 +345,27 @@ export const PROCEDURES: MedicalItem[] = [
     category: "mri"
   },
   {
-    canonical: "MRI Brain W/WO Contrast",
+    canonical: "MRI brain W/WO Contrast",
     variations: ["mri brain w/wo contrast", "mri brain w/w/o contrast", "MRI, brain + brain stem, w/o contrast"],
     category: "mri"
   },
   {
-    canonical: "MRI Brain +IAC W/Contrast",
+    canonical: "MRI brain +IAC W/Contrast",
     variations: ["mri brain +iac w/ contrast", "mri brain iac w/ contrast", "MRI, brain + internal auditory canal, w/o contrast"],
     category: "mri"
   },
   {
-    canonical: "MRI Brain +IAC W/O Contrast",
+    canonical: "MRI brain +IAC W/O Contrast",
     variations: ["mri brain +iac w/o contrast", "mri brain iac w/o contrast"],
     category: "mri"
   },
   {
-    canonical: "MRI Brain W/Contrast",
+    canonical: "MRI brain W/Contrast",
     variations: ["mri brain w/ contrast", "mri brain w/contrast", "mri brain with contrast"],
     category: "mri"
   },
   {
-    canonical: "MRI Brain w/o contrast",
+    canonical: "MRI brain w/o contrast",
     variations: ["mri brain without contrast", "mri brain w/o contrast"],
     category: "mri"
   },
