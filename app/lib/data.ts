@@ -295,6 +295,10 @@ export const PROCEDURES: MedicalItem[] = [
     variations: ["mr venogram neck w/o", "mr venogram neck"],
     category: "mri"
   },
+  {canonical: "MR, angiogram, head + neck, w/o contrast", 
+    variations: ["mr angiogram head neck w/o contrast", "mr angiogram head neck without contrast", "MR, angiogram, head + neck, w/o contrast"], 
+    category: "mri"
+  },
   {
     canonical: "MRA Brain/Head",
     variations: ["mra brain/head", "mra brain", "mra head"],
