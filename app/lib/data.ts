@@ -244,8 +244,8 @@ export const PROCEDURES: MedicalItem[] = [
     category: "ct"
   },
   {
-    canonical: "CT Soft Tissue Neck W/O Contrast",
-    variations: ["ct soft tissue neck w/o contrast", "ct soft tissue neck without contrast"],
+    canonical: "CT, neck, soft tissue, w/o contrast",
+    variations: ["ct soft tissue neck w/o contrast", "ct soft tissue neck without contrast", "CT, neck, soft tissue, w/o contrast "],
     category: "ct"
   },
   {
@@ -347,7 +347,7 @@ export const PROCEDURES: MedicalItem[] = [
   },
   {
     canonical: "MRI Brain +IAC W/Contrast",
-    variations: ["mri brain +iac w/ contrast", "mri brain iac w/ contrast"],
+    variations: ["mri brain +iac w/ contrast", "mri brain iac w/ contrast", "MRI, brain + internal auditory canal, w/o contrast"],
     category: "mri"
   },
   {
@@ -531,7 +531,8 @@ export const PROCEDURES: MedicalItem[] = [
       "nerve conduction study/EMG, upper extremity",
       " EMG 10 Min UPPER, 20 min",
       "nerve conduction study/EMG, upper extremity",
-      " EMG 10 Min UPPER, 10 min"
+      " EMG 10 Min UPPER, 10 min",
+      "nerve conduction study/EMG, upper extremity (PROC) (submit)"
     ],
     category: "test"
   },
@@ -556,7 +557,7 @@ export const PROCEDURES: MedicalItem[] = [
     category: "test"
   },
   {
-    canonical: "Brace",
+    canonical: "brace",
     variations: ["brace"],
     category: "equipment"
   },

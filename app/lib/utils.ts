@@ -174,6 +174,7 @@ export interface Appointment {
   date: Date | null;
   isCancelled?: boolean;
   cancellationReason?: string;
+  isCompleted?: boolean;
 }
 
 export function parseAppointments(input: string): Appointment[] {
@@ -188,18 +189,19 @@ export function parseAppointments(input: string): Appointment[] {
       // Extract date from the appointment line
       const date = extractDate(line);
       
-      // Check previous lines for cancellation status
+      // Check previous lines for status
       let isCancelled = false;
       let cancellationReason = '';
-      
-      // Look back up to 3 lines to find cancellation info
+      let isCompleted = false;
+
+      // Look back up to 3 lines to find status info
       for (let j = Math.max(0, i - 3); j < i; j++) {
         const prevLine = lines[j].toLowerCase();
-        
+
         // Check if this appointment was cancelled
-        if (prevLine.includes('x cancelled') || prevLine.includes('cancelled:')) {
+        if (prevLine.includes('x cancelled')) {
           isCancelled = true;
-          
+
           // The next line after 'x cancelled:' usually contains the reason
           if (j + 1 < lines.length) {
             const reasonLine = lines[j + 1].trim();
@@ -207,18 +209,16 @@ export function parseAppointments(input: string): Appointment[] {
           }
           break;
         }
+
+        // Check if this appointment has claim created (completed)
+        if (prevLine.includes('4 claim created')) {
+          isCompleted = true;
+        }
       }
       
-      // Only include appointment if:
-      // 1. Not cancelled at all, OR
-      // 2. Cancelled but with "PATIENT RESCHEDULED" reason, OR
-      // 3. Cancelled but with "PATIENT CANCELLED" reason (patient decided not to do it)
-      const isValidAppointment = !isCancelled || 
-                                  cancellationReason.toUpperCase().includes('PATIENT RESCHEDULED') ||
-                                  cancellationReason.toUpperCase().includes('PATIENT CANCELLED') ||
-                                  cancellationReason.toUpperCase().includes('CANCELLED FROM PATIENT PORTAL') ||
-                                  cancellationReason.toUpperCase().includes('SCHEDULING ERROR');
-      
+      // Include appointment if not cancelled OR if completed (claim created)
+      const isValidAppointment = !isCancelled || isCompleted;
+
       if (isValidAppointment) {
         appointments.push({
           text: line.trim(),
@@ -226,7 +226,8 @@ export function parseAppointments(input: string): Appointment[] {
           lineNumber: i + 1,
           date,
           isCancelled,
-          cancellationReason
+          cancellationReason,
+          isCompleted
         });
       }
     }
@@ -477,3 +478,4 @@ export function analyzeMissingProcedures(
   return deduplicated;
 }
 
+	
