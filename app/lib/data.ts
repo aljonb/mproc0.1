@@ -72,7 +72,11 @@ export const PROCEDURES: MedicalItem[] = [
   },
   
   // Ultrasounds
-
+  {
+    canonical: "US upper arterial",
+    variations: ["US, duplex, arterial, upper extremity"],
+    category: "ultrasound"
+  },
   {
     canonical: "US echo",
     variations: ["US, echo", "US echo", "US, echocardiogram", "US echocardiogram"],
