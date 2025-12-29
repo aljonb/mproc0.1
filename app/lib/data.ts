@@ -572,6 +572,7 @@ export const PROCEDURES: MedicalItem[] = [
   {
     canonical: "EMG upper",
     variations: [
+      " EMG 10 Min UPPER, 40 min",
       "emg upper",
       "emg upper extremity",
       "nerve conduction study emg upper",
