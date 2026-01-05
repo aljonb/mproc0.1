@@ -106,7 +106,7 @@ export const PROCEDURES: MedicalItem[] = [
   },
   {
     canonical: "US lower arterial",
-    variations: ["US ARTERIAL DOPPLER,", "US, duplex, arterial, lower extremity"],
+    variations: ["US ARTERIAL DOPPLER,", "US, duplex, arterial, lower extremity", "US, doppler, arterial"],
     category: "ultrasound"
   },
   {
