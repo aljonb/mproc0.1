@@ -621,7 +621,7 @@ export const PROCEDURES: MedicalItem[] = [
   },
   {
     canonical: "brace",
-    variations: ["brace"],
+    variations: ["brace", "KNEE BRACE, HINGED", "knee brace", "orthotic brace"],
     category: "equipment"
   },
   {
