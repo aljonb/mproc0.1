@@ -10,7 +10,7 @@ export const PROVIDERS: MedicalItem[] = [
 
   {
     canonical: "PCP",
-    variations: ["internal medicine referral", "PCP_Luyten"],
+    variations: ["internal medicine referral", "PCP_Luyten", "PCP_Sarin", "PCP_Rachunow", "PA_Roa"],
     category: "provider"
   },
   {
