@@ -174,7 +174,7 @@ export const PROCEDURES: MedicalItem[] = [
     category: "ct"
   },
   {
-    canonical: "CT Abdomen W/WO Contrast",
+    canonical: "CT Abdomen w/wo contrast",
     variations: ["ct abdomen w/wo contrast", "ct abdomen w/w/o contrast", "ct abdomen with without contrast"],
     category: "ct"
   },
@@ -438,7 +438,7 @@ export const PROCEDURES: MedicalItem[] = [
   },
   {
     canonical: "MRI Hand",
-    variations: ["mri hand"],
+    variations: ["mri hand", "MRI, hand, w/o contrast"],
     category: "mri"
   },
   {
@@ -497,8 +497,8 @@ export const PROCEDURES: MedicalItem[] = [
     category: "mri"
   },
   {
-    canonical: "MRI Pelvis",
-    variations: ["mri pelvis"],
+    canonical: "MRI, pelvis, w/o contrast",
+    variations: ["mri pelvis", "MRI, pelvis, w/o contrast"],
     category: "mri"
   },
   {
