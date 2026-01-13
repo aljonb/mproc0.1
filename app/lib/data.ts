@@ -10,7 +10,7 @@ export const PROVIDERS: MedicalItem[] = [
 
   {
     canonical: "PCP",
-    variations: ["internal medicine referral", "PCP_Luyten", "PCP_Sarin", "PCP_Rachunow", "PA_Roa"],
+    variations: ["internal medicine referral", "PCP_Luyten", "PCP_Sarin", "PCP_Rachunow", "PA_Roa", "PA_Gassanov"],
     category: "provider"
   },
   {
@@ -168,6 +168,11 @@ export const PROCEDURES: MedicalItem[] = [
   },
   
   // CT Scans
+  {canonical: "CT, abdomen + pelvis, w/o contrast",
+    variations: ["CT, abdomen + pelvis, w/o contrast"],
+    category: "ct"
+  },
+
   {
     canonical: "CT Abdomen W/Contrast",
     variations: ["ct abdomen w/contrast", "ct abdomen w/ contrast", "ct abdomen with contrast"],
@@ -465,7 +470,7 @@ export const PROCEDURES: MedicalItem[] = [
 
   {
     canonical: "MRI Knee",
-    variations: ["mri knee"],
+    variations: ["mri knee"], 
     category: "mri"
   },
   {
