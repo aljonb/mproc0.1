@@ -600,32 +600,38 @@ export const PROCEDURES: MedicalItem[] = [
   },
 
   {
+    canonical: "XR, lumbar spine",
+    variations: ["XR, lumbar spine", "X-Ray"],
+    category: "imaging"
+  },
+
+  {
     canonical: "XR, skull",
-    variations: ["XR, skull"],
+    variations: ["XR, skull", "X-Ray"],
     category: "imaging" 
   },
 
   {
     canonical: "XR, knee",
-    variations: ["XR, knee"],
+    variations: ["XR, knee", "X-Ray"],
     category: "imaging" 
   },
 
   {
     canonical: "XR, hand",
-    variations: ["XR, hand"],
+    variations: ["XR, hand", "X-Ray"],
     category: "imaging" 
   },
 
   {
     canonical: "XR, chest",
-    variations: ["XR, chest"],
+    variations: ["XR, chest", "X-Ray"],
     category: "xray"
   },
 
   {
     canonical: "X-Ray",
-    variations: ["XR,", "xray", "X_RAY"],
+    variations: ["XR,", "xray", "X_RAY", "X-Ray"],
     category: "imaging"
   },
   
@@ -683,6 +689,11 @@ export const PROCEDURES: MedicalItem[] = [
     canonical: "EVOX",
     variations: ["evox", "electrophysiologic evaluation", "elctrophysiologic evaluation", "evoked potential"],
     category: "test"
+  },
+   {
+    canonical: "back brace",
+    variations: ["back brace"],
+    category: "equipment"
   },
   {
     canonical: "brace",
