@@ -119,18 +119,49 @@ export function isOrderRecent(orderDate: Date): boolean {
 
 // Extract date from a line of text (looks for common date patterns)
 export function extractDate(text: string): Date | null {
-  // Common date patterns: MM/DD/YYYY, YYYY-MM-DD, MM-DD-YYYY, etc.
+  // Common numeric date patterns: MM/DD/YYYY, YYYY-MM-DD, MM-DD-YYYY, etc.
   const datePatterns = [
     /(\d{1,2}[-/]\d{1,2}[-/]\d{2,4})/,  // MM/DD/YYYY or MM-DD-YYYY
     /(\d{4}[-/]\d{1,2}[-/]\d{1,2})/,    // YYYY-MM-DD or YYYY/MM/DD
     /(\d{1,2}[-/]\d{1,2}[-/]\d{2})/,    // MM/DD/YY
   ];
   
+  // Try numeric patterns first
   for (const pattern of datePatterns) {
     const match = text.match(pattern);
     if (match) {
       const date = parseDate(match[1]);
       if (date) return date;
+    }
+  }
+  
+  // Handle month name formats: "January 15, 2026", "Jan 15, 2026", etc.
+  const monthNamePatterns = [
+    /(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),\s+(\d{4})/i,
+    /(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\.?\s+(\d{1,2}),?\s+(\d{4})/i,
+  ];
+  
+  for (const pattern of monthNamePatterns) {
+    const match = text.match(pattern);
+    if (match) {
+      const monthNames: { [key: string]: number } = {
+        january: 0, february: 1, march: 2, april: 3, may: 4, june: 5,
+        july: 6, august: 7, september: 8, october: 9, november: 10, december: 11,
+        jan: 0, feb: 1, mar: 2, apr: 3, jun: 5,
+        jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11,
+      };
+      
+      const monthKey = match[1].toLowerCase().replace(/\.$/, '');
+      const month = monthNames[monthKey];
+      const day = parseInt(match[2], 10);
+      const year = parseInt(match[3], 10);
+      
+      if (month !== undefined) {
+        const date = new Date(year, month, day);
+        if (!isNaN(date.getTime())) {
+          return date;
+        }
+      }
     }
   }
   
@@ -392,6 +423,38 @@ export interface MissingProcedure {
   reason: string;
 }
 
+// Helper: check if an appointment occurs on or after the order date (or when dates are missing)
+function isAppointmentOnOrAfterOrder(apt: Appointment, order: Order): boolean {
+  // If order has no date, accept any appointment
+  if (!order.date) return true;
+
+  // If appointment has no date, accept it (can't verify timing)
+  if (!apt.date) return true;
+
+  // Only count appointments on or after the order date
+  return apt.date >= order.date;
+}
+
+// Helper: determine if an appointment's medical item satisfies an order's medical item
+function appointmentSatisfiesOrder(order: Order, apt: Appointment): boolean {
+  const orderCanon = order.medicalItem?.canonical;
+  const aptCanon = apt.medicalItem?.canonical;
+  const orderCategory = order.medicalItem?.category;
+
+  if (!orderCanon || !aptCanon) return false;
+
+  // Exact canonical match
+  if (aptCanon === orderCanon) return true;
+
+  // Flexible rule: any generic X-Ray appointment satisfies any specific X-Ray order
+  // i.e., if the order is an X-ray type (imaging/xray category) and the appointment is generic "X-Ray"
+  if (aptCanon === "X-Ray" && (orderCategory === "imaging" || orderCategory === "xray")) {
+    return true;
+  }
+
+  return false;
+}
+
 export function analyzeMissingProcedures(
   ordersInput: string,
   appointmentsInput: string,
@@ -419,18 +482,11 @@ export function analyzeMissingProcedures(
     
     // Check if there's a matching appointment ON OR AFTER the order date
     const hasAppointment = appointments.some(apt => {
-      if (apt.medicalItem?.canonical !== order.medicalItem?.canonical) {
+      if (!appointmentSatisfiesOrder(order, apt)) {
         return false;
       }
-      
-      // If order has no date, accept any appointment
-      if (!order.date) return true;
-      
-      // If appointment has no date, accept it (can't verify timing)
-      if (!apt.date) return true;
-      
-      // Only count appointments on or after the order date
-      return apt.date >= order.date;
+
+      return isAppointmentOnOrAfterOrder(apt, order);
     });
     
     if (hasAppointment) {

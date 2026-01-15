@@ -15,7 +15,7 @@ export const PROVIDERS: MedicalItem[] = [
   },
   {
     canonical: "allergist",
-    variations: ["allergist", "Allergy FU", "Allergist_Babazadeh", " Allergy NEW, 20 min"],
+    variations: ["allergist", "Allergy FU", "Allergist_Babazadeh"],
     category: "provider"
   },
   {
@@ -37,28 +37,28 @@ export const PROVIDERS: MedicalItem[] = [
     canonical: "ortho",
     variations: ["ortho", "orthopedist", "orthopedic", "orthopedics"],
     category: "provider"
-  },  
+  },
   {
-    canonical: "pulmo",     
+    canonical: "pulmo",
     variations: ["pulmo", "pulmonology", "pulmonologist", "sleep medicine referral", "sleep medicine", "	Pulmo_Rumi"],
-    category: "provider"  
+    category: "provider"
   },
   {
     canonical: "pain management",
     variations: ["pain management", "pain mgmt"],
     category: "provider"
   }
-  
+
 ];
 
 export const PROCEDURES: MedicalItem[] = [
   // Allergy & PT
   {
     canonical: "allergy test",
-    variations: ["allergy testing", "allergy skin prick test", "allergy test", "Allergy_Testing", "Allergy NEW, 20 min", "Allergy Testing"],
+    variations: ["allergy testing, skin prick (PROC) (submitted)", "allergy skin prick test", "allergy test", "Allergy_Testing", "Allergy NEW, 20 min", "Allergy Testing"],
     category: "test"
-  },  
-  { 
+  },
+  {
     canonical: "physical therapy",
     variations: [
       "physical therapy",
@@ -70,7 +70,7 @@ export const PROCEDURES: MedicalItem[] = [
     ],
     category: "therapy"
   },
-  
+
   // Ultrasounds
   {
     canonical: "US upper arterial",
@@ -154,7 +154,7 @@ export const PROCEDURES: MedicalItem[] = [
     variations: ["us soft tissue extremities", "ultrasound soft tissue extremities"],
     category: "ultrasound"
   },
-  
+
   // Sleep Tests
   {
     canonical: "sleep apnea device",
@@ -166,9 +166,10 @@ export const PROCEDURES: MedicalItem[] = [
     variations: ["sleep insomnia home test", "insomnia test", "insomnia device", "electroencephalogram eeg all night recording", "eeg all night recording"],
     category: "test"
   },
-  
+
   // CT Scans
-  {canonical: "CT, abdomen + pelvis, w/o contrast",
+  {
+    canonical: "CT, abdomen + pelvis, w/o contrast",
     variations: ["CT, abdomen + pelvis, w/o contrast"],
     category: "ct"
   },
@@ -199,8 +200,8 @@ export const PROCEDURES: MedicalItem[] = [
     category: "ct"
   },
   {
-    canonical: "CT Brain",
-    variations: ["ct brain", "ct head"],
+    canonical: "CT, head, w/o contrast ",
+    variations: ["CT, head, w/o contrast"],
     category: "ct"
   },
   {
@@ -305,7 +306,7 @@ export const PROCEDURES: MedicalItem[] = [
     variations: ["ldct chest lung cancer screen", "ldct", "low dose ct chest"],
     category: "ct"
   },
-  
+
   // MRI/MRA
 
 
@@ -334,8 +335,9 @@ export const PROCEDURES: MedicalItem[] = [
     variations: ["mr venogram neck w/o", "mr venogram neck"],
     category: "mri"
   },
-  {canonical: "MR, angiogram, head + neck, w/o contrast", 
-    variations: ["mr angiogram head neck w/o contrast", "mr angiogram head neck without contrast", "MR, angiogram, head + neck, w/o contrast"], 
+  {
+    canonical: "MR, angiogram, head + neck, w/o contrast",
+    variations: ["mr angiogram head neck w/o contrast", "mr angiogram head neck without contrast", "MR, angiogram, head + neck, w/o contrast"],
     category: "mri"
   },
   {
@@ -407,10 +409,16 @@ export const PROCEDURES: MedicalItem[] = [
     canonical: "MRI, brain, w/o contrast",
     variations: ["mri brain w/ contrast", "mri brain w/contrast", "mri brain with contrast"],
     category: "mri"
-  },  
+  },
   {
     canonical: "MRI, brain, w/o contrast",
-    variations: ["mri brain without contrast", "mri brain w/o contrast", "MRI, brain, w/o contrast (submit)"],
+    variations: [
+      "mri brain without contrast",
+      "mri brain w/o contrast",
+      "MRI, brain, w/o contrast (submit)",
+      "MRI Brain Without Contr., 15 min",
+      "MRI Brain Without Contr"
+    ],
     category: "mri"
   },
   {
@@ -443,7 +451,8 @@ export const PROCEDURES: MedicalItem[] = [
     variations: ["mri femur"],
     category: "mri"
   },
-  {canonical: "MRI, foot, w/o contrast",
+  {
+    canonical: "MRI, foot, w/o contrast",
     variations: ["MRI, foot, w/o contrast"],
     category: "mri"
   },
@@ -493,7 +502,7 @@ export const PROCEDURES: MedicalItem[] = [
 
   {
     canonical: "MRI Knee",
-    variations: ["mri knee"], 
+    variations: ["mri knee"],
     category: "mri"
   },
   {
@@ -521,13 +530,14 @@ export const PROCEDURES: MedicalItem[] = [
     canonical: "MRI Orbits (Face)",
     variations: ["mri orbits", "mri orbits face"],
     category: "mri"
-  },                
+  },
   {
     canonical: "MR, angiogram, head + neck, w/ contrast",
     variations: ["MR, angiogram, head + neck, w/ contrast", "mr angiogram head neck w/ contrast"],
     category: "mri"
   },
-  {canonical: "MRI, pituitary, w/wo contrast",
+  {
+    canonical: "MRI, pituitary, w/wo contrast",
     variations: ["mri pituitary w/wo contrast", "mri pituitary without contrast"],
     category: "mri"
   },
@@ -587,54 +597,76 @@ export const PROCEDURES: MedicalItem[] = [
     category: "mri"
   },
   {
+    canonical: "MRI, brain + orbits, w/wo contrast",
+    variations: ["mri orbit face neck w/o contrast", " MRA BRAIN/HEAD, 30 min"],
+    category: "mri"
+  },
+  {
     canonical: "MRI Orbit Face Neck W/O Contrast",
     variations: ["mri orbit face neck wo/contrast", "mri orbit face neck w/o contrast"],
     category: "mri"
   },
-  
+
   // X-Ray
   {
     canonical: "XR, foot",
     variations: ["XR, foot"],
-    category: "imaging" 
+    category: "imaging"
   },
 
   {
     canonical: "XR, lumbar spine",
-    variations: ["XR, lumbar spine", "X-Ray"],
+    variations: ["XR, lumbar spine", "XR, lumbosacral spine"],
     category: "imaging"
   },
 
   {
     canonical: "XR, skull",
-    variations: ["XR, skull", "X-Ray"],
-    category: "imaging" 
+    variations: ["XR, skull"],
+    category: "imaging"
   },
 
   {
     canonical: "XR, knee",
-    variations: ["XR, knee", "X-Ray"],
-    category: "imaging" 
-  },
+    variations: ["XR, knee"],
+    category: "xray"
+  },    
 
   {
     canonical: "XR, hand",
-    variations: ["XR, hand", "X-Ray"],
-    category: "imaging" 
+    variations: ["XR, hand"],
+    category: "imaging"
   },
 
   {
     canonical: "XR, chest",
-    variations: ["XR, chest", "X-Ray"],
+    variations: ["XR, chest"],
     category: "xray"
+  },
+  {
+    canonical: "XR, shoulder",
+    variations: ["XR, shoulder"],
+    category: "imaging"
+  },
+
+  {
+    canonical: "XR, cervical spine",
+    variations: ["XR, cervical spine"],
+    category: "imaging"
+  },
+
+  {
+    canonical: "XR, lumbosacral spine",
+    variations: ["XR, lumbosacral spine"],
+    category: "imaging"
   },
 
   {
     canonical: "X-Ray",
-    variations: ["XR,", "xray", "X_RAY", "X-Ray"],
+    variations: ["XR,", "xray", "X_RAY", "X-Ray", " X-Ray, 15 min", "X-Ray, 15 min"],
     category: "imaging"
   },
-  
+
   // Tests & Procedures
   {
     canonical: "COVID Rapid Test",
@@ -681,7 +713,9 @@ export const PROCEDURES: MedicalItem[] = [
       "lower extremity electromyogram",
       "EMG 10 Min LOWER, 20 min",
       "EMG 10 Min LOWER, 10 min",
-      "nerve conduction study/EMG, lower extremity (PROC) (submit)"
+      "nerve conduction study/EMG, lower extremity (PROC) (submit)",
+      "EMG Lower, 20 min",
+      "EMG Lower"
     ],
     category: "test"
   },
@@ -690,7 +724,7 @@ export const PROCEDURES: MedicalItem[] = [
     variations: ["evox", "electrophysiologic evaluation", "elctrophysiologic evaluation", "evoked potential"],
     category: "test"
   },
-   {
+  {
     canonical: "back brace",
     variations: ["back brace"],
     category: "equipment"
