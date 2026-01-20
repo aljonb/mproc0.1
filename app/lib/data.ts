@@ -619,6 +619,16 @@ export const PROCEDURES: MedicalItem[] = [
     category: "imaging"
   },
   {
+    canonical: "XR, thoracic spine",
+    variations: ["XR, thoracic spine"],
+    category: "imaging"
+  },
+  {
+    canonical: "XR, lumbosacral spine",
+    variations: ["XR, lumbosacral spine"],
+    category: "imaging"
+  },
+  {
     canonical: "XR, toe",
     variations: ["XR, toe"],
     category: "imaging"
