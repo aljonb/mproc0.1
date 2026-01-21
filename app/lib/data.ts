@@ -221,12 +221,12 @@ export const PROCEDURES: MedicalItem[] = [
   },
   {
     canonical: "CT Chest",
-    variations: ["ct chest"],
+    variations: ["ct chest", "CT, chest, w/ contrast"],
     category: "ct"
   },
   {
-    canonical: "CT Chest W/Contrast",
-    variations: ["ct chest w/contrast", "ct chest w/ contrast", "ct chest with contrast"],
+    canonical: "CT, chest, w/ contrast",
+    variations: ["CT, chest, w/ contrast"],
     category: "ct"
   },
   {
