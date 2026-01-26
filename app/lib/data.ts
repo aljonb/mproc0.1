@@ -402,12 +402,13 @@ export const PROCEDURES: MedicalItem[] = [
   },
   {
     canonical: "MRI, brain + internal auditory canal, w/o contrast",
-    variations: ["mri brain +iac w/ contrast", "mri brain iac w/ contrast", "MRI, brain + internal auditory canal, w/o contrast"],
-    category: "mri"
-  },
-  {
-    canonical: "MRI brain +IAC W/O Contrast",
-    variations: ["mri brain +iac w/o contrast", "mri brain iac w/o contrast"],
+    variations: [
+      "MRI, brain + internal auditory canal, w/o contrast",
+      "mri brain + internal auditory canal w/o contrast",
+      "mri brain +iac w/o contrast",
+      "mri brain iac w/o contrast",
+      "MRI Brain +IAC W/O Contrast"
+    ],
     category: "mri"
   },
   {
@@ -819,4 +820,3 @@ export const PROCEDURES: MedicalItem[] = [
 
 // Combine all medical items
 export const ALL_MEDICAL_ITEMS = [...PROVIDERS, ...PROCEDURES];
-
